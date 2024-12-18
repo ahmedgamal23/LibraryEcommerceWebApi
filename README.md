@@ -6,19 +6,19 @@ Built using ASP.NET Core with a layered architecture, the project ensures scalab
 
 ------------- Architecture --------------------
 
-Controller 
-      | |
-       V
-Service
-      | |
-       V
-UnitOfWork
-      | |
-       V
-Repository
-      | |
-       V
-DbContext (Database) 
+      Controller 
+         | |
+          V
+      Service
+         | |
+          V
+      UnitOfWork
+         | |
+          V
+      Repository
+         | |
+          V
+  DbContext (Database) 
 
 
 ##### Key Responsibilities
