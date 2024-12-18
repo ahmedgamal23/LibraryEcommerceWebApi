@@ -1,0 +1,102 @@
+﻿LibraryEcommerceWeb/
+│
+├── LibraryEcommerceWebAPI/              # API (Presentation Layer)
+├── LibraryEcommerceWeb.Application/      # Application Layer (Business Logic)
+├── LibraryEcommerceWeb.Domain/           # Domain Layer (Entities, Core Rules)
+├── LibraryEcommerceWeb.Infrastructure/   # Infrastructure Layer (Data, External Services)
+├── LibraryEcommerceWeb.Shared/           # Shared Layer (Common DTOs, Utilities)
+└── LibraryEcommerceWeb.Tests/            # Unit and Integration Tests
+
+
+1 - LibraryEcommerceWebAPI/
+	│
+	├── Controllers
+	|	
+	├── Extensions
+	|	
+	├── Service
+	│   
+	└── Program.cs
+
+2 - LibraryEcommerce.Application/
+	└── Interfaces/
+		
+
+3 - LibraryEcommerce.Domain/
+	│
+	└── Entities/
+		
+4 - LibraryEcommerce.Infrastructure/
+	│
+	├── Data/
+	│   
+	├── Repositories/
+	│   
+	└── Services/
+		
+5 - LibraryEcommerce.Shared/
+	│
+	└── DTOs/
+
+6 - LibraryEcommerce.Tests/ 
+	Contains unit tests for all layers.
+	└── InfrastructureTests/
+
+
+--------------------------------------------------------------
+--------------------------------------------------------------
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+Relationships Summary:
+User ↔ Order (One-to-Many)
+Order ↔ OrderItem (One-to-Many)
+Product ↔ Category (Many-to-One)
+Order ↔ Payment (One-to-One)
+User ↔ Address (One-to-Many)
+Product ↔ Review (One-to-Many)
+
+--------------------------------------------------------------
+--------------------------------------------------------------
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+
+------------- Structure --------------------
+
+Controller ======> Service ======> UnitOfWork  =======> Repository  ========> DbContext (Database) 
+
+
+------------- Technologies --------------------
+Asp .Net Core Api 8
+EntityFrameWork Core 8
+SQL Server
+LINQ
+C#
+NUnit
+NUnitAdapter
+MOQ :  to create virtual sending email
+In-Memory-Database : to avoid access real database in Testing
+
+------------- Design Pattern ------------------
+Repository Design Pattern
+Dependancy Injection
+Unit Of Work Design Pattern
+
+------------- Architecture --------------------
+
+				Controller 
+					| |
+					 V
+				  Service
+					| |
+					 V
+				 UnitOfWork
+					| |
+					 V
+				 Repository
+					| |
+					 V
+			DbContext (Database) 
+
+			
